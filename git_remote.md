@@ -1,4 +1,4 @@
-## Git and collaboration
+# Git and collaboration
 
 ---
 
