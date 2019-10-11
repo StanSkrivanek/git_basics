@@ -62,8 +62,6 @@ Now a new branch will be created, initialized to watch our changes in code.
 
 ## STAGE & COMMIT
 
-_You will find Git principle video in class folder_
-
 Once we make our changes we have to apply two commands. For basic use of Git, you don't need to understand what is going behind the scenes, this is an advanced topic. All you need to know that first we have to **`add`** our changes into memory and then **`commit`** _(assign)_ our changes into file(s).
 
 We can edit more than one file at once when it make sense, e.g. add button in HTML with function call in index.html and javaScript function in main.js that's run on button.
@@ -91,6 +89,8 @@ There is a shortcut do `add` and `commit` changes on **current** branch at once 
 This mean `add` and `commit` will be made into branch you are currently in.
 
 Another common rule we should follow is writing your commit messages short and descriptive. Important is than messages should be written in PRESENT tense, that's because commit comment is about what committed code do (Not what we did).
+
+![You will find Git principle video in class folder](assets/img/git_local_basics.png)
 
 ## Merge branches into MASTER
 
