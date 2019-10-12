@@ -1,5 +1,11 @@
 # GIT - Version Control System
 
+Git is most popular (distributed) version control. This mean that each user maintain their own repositories, they do NOT work from a central repository as in SCCS, RCS, CVS and SVN (other past VCS). All the changes are stored as sets or patches, and we're focused on tracking changes, not the versions of the documents.
+
+**NOTE:** Keep in mind that **Git and Github are** two platform with **different** purpose.
+
+We can use Git on our local projects but Git is really shining is team work where more coders is working on one project.
+
 ---
 
 ## Basics
