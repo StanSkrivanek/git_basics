@@ -100,7 +100,9 @@ This mean `add` and `commit` will be made into branch you are currently in.
 
 Another common rule we should follow is writing your commit messages short and descriptive. Important is than messages should be written in PRESENT tense, that's because commit comment is about what committed code do (Not what we did).
 
-![You will find Git principle video in class folder](assets/img/git_local_basics.png)
+<!-- ![You will find Git principle video in class folder](assets/img/git_local_basics.png) -->
+
+![You will find Git principle video in class folder](https://www.dropbox.com/s/ars5fp4acwazrky/git_local_basics.png?raw=1)
 
 ## Merge branches into MASTER
 
