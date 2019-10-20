@@ -6,6 +6,10 @@ Git is most popular (distributed) version control. This mean that each user main
 
 We can use Git on our local projects but Git is really shining is team work where more coders is working on one project.
 
+Distributed version control is an important part of the Git architecture, and it's important to learn about it.
+
+We'll talk more about how Git tracks and merges these sets of changes as we go forward. For now, you just should understand that there is no central repository that we all work from. All repositories are considered equal by Git.
+
 ---
 
 ## Basics
