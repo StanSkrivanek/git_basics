@@ -66,7 +66,7 @@ There is shortcut to do two steps above _(Create & Move)_ in one command
 
 This code mean: go to branch **`checkout`**, but before you do that create for me a new brunch **`-b`** with this specific name **`web_menu`**.
 
-Now a new branch will be created, initialized to watch our changes in code.
+Now a new branch will be created, initialized, and start watch our changes in code.
 
 ---
 
