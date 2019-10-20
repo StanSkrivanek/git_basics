@@ -104,6 +104,8 @@ Another common rule we should follow is writing your commit messages short and d
 
 ![You will find Git principle video in class folder](https://www.dropbox.com/s/ars5fp4acwazrky/git_local_basics.png?raw=1)
 
+[Git basic principle (video)](https://www.dropbox.com/s/juv012b573xqoc1/git_local_basics.m4v?raw=1)
+
 ## Merge branches into MASTER
 
 When we have our code written into file on the current branch, we can
