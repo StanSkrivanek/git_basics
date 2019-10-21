@@ -48,7 +48,7 @@ or
 
 we can rename our project
 
-**`mw`** `old name` `new name`
+**`mv`** `old name` `new name`
 
 ```bash
 ~ /desktop > mv project_01 newSite
@@ -92,20 +92,22 @@ We are coding and saving our changes as usual. At this stage Git do nothing, onl
 
 ### Staging Area
 
-When we are done with our changes in code we have tell Git to add our changes into memory (cache) by `git` `add`
+When we are done with our changes in code we have to tell Git to add our changes into memory (cache) by command `git` `add`
 
-If we would like to place into memory only certain file (or files) we have to specify these files `git add filename` `filename`
+- If we would like to place into memory only changes in certain file (or files) we have to specify these files `git add filename` `filename`
 
-If we would like to place into memory **all** files we can use dot `.` Command will look like this `git add .`
+- If we would like to place into memory **all** files with changes we can use dot `.` Command will look like this `git add .`
 
-Placing changes into memory Git will know what changes are going to be part of the next commit.
+By placing changes into memory, Git will know what changes are going to be part of the next commit.
 **The staging area is how git knows what will change between the current commit and the next commit**.
 
 We can check changes with `git status`
 
 ### Repository
 
-Once Git have changes **staged** in memory we need to tell Git to write reference to these changes into file on our computer by git `commit -m "message"`
+Once Git have changes **staged** in memory we need to tell Git to write reference to these changes into file on our computer by `git commit -m "descriptive message"`
+
+We can check changes with `git status`
 
 We can check changes with `git status`
 
