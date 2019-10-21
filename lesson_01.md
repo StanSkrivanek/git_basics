@@ -88,7 +88,7 @@ Git have 3 Areas:
 
 ### Working Area
 
-We are coding and saving our changes as usual. At this stage Git do nothing, only monitoring and remembering our changes in code.
+We are coding and saving our changes as usual. At this stage Git do nothing, only monitoring and remembering our changes in code. We can check these untracked changes with `git status`
 
 ### Staging Area
 
@@ -101,9 +101,13 @@ If we would like to place into memory **all** files we can use dot `.` Command w
 Placing changes into memory Git will know what changes are going to be part of the next commit.
 **The staging area is how git knows what will change between the current commit and the next commit**.
 
+We can check changes with `git status`
+
 ### Repository
 
 Once Git have changes **staged** in memory we need to tell Git to write reference to these changes into file on our computer by git `commit -m "message"`
+
+We can check changes with `git status`
 
 All our commits are stored in **`.git`** folder
 
