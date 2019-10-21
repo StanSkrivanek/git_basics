@@ -89,6 +89,7 @@ Git have 3 Areas:
 ### Working Area
 
 We are coding and saving our changes as usual. At this stage Git do nothing, only monitoring and remembering our changes in code. We can check these untracked changes with `git status`
+After staging our changes in memory we can check our changes with command `git diff`.
 
 ### Staging Area
 
@@ -100,8 +101,6 @@ When we are done with our changes in code we have to tell Git to add our changes
 
 By placing changes into memory, Git will know what changes are going to be part of the next commit.
 **The staging area is how git knows what will change between the current commit and the next commit**.
-
-We can check changes with `git status`
 
 ### Repository
 
