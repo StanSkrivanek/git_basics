@@ -23,7 +23,7 @@ once we are inside out project folder we can start Git by `git` `init`
 ~ /desktop/project_01 > git init
 ```
 
-## from now on Git will track all changes inside our project folder
+from now on Git will track all changes inside our project folder
 
 ---
 
