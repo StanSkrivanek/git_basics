@@ -48,7 +48,7 @@ or
 
 we can rename our project
 
-**`mw`** `old name` `new name`
+**`mv`** `old name` `new name`
 
 ```bash
 ~ /desktop > mv project_01 newSite
