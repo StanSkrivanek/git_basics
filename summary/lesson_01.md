@@ -1,6 +1,6 @@
 # Git - lessons | 01
 
-this is summary to for first lesson
+summary
 
 ---
 
