@@ -115,10 +115,10 @@ All our commits are stored in **`.git`** folder
 
 ## Git commands
 
-`git` `init` - Git initialization
-`git` `status` - Git status (staging/commit)
-`git` `add` `file name` / `.` - adding to staging area (memory)
-`git` `rm` `--cached` `file name` - removing from staging area (memory)
-`git` `commit` `-m` `"message"` - adding changes to file on computer
+- `git` `init` - Git initialization
+- `git` `status` - Git status (staging/commit)
+- `git` `add` `file name` / `.` - adding to staging area (memory)
+- `git` `rm` `--cached` `file name` - removing from staging area (memory)
+- `git` `commit` `-m` `"message"` - adding changes to file on computer
 
-`git` `log` `--oneline` - show all commits (one line overview)
+- `git` `log` `--oneline` - show all commits (one line overview)
