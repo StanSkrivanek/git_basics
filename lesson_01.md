@@ -60,7 +60,7 @@ we can rename our project
 
 ### Delete Git (.git)
 
-by deleting `.git` folder from our project we will loose ALL uncommitted data
+by deleting `.git` folder from our project we will loose ALL uncommitted and/or not merged changes to **Master** branch
 
 **`rf`** `-rf` `file_name`
 
