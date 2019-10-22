@@ -7,10 +7,9 @@
 - Using `mkdir`
 
 ```bash
-~
-cd desktop
-~ / desktop > mkdir project_01
-~ / desktop > cd project_01
+$ cd desktop
+$ / desktop > mkdir project_01
+$ / desktop > cd project_01
 ```
 
 now we have new project folder
@@ -20,7 +19,7 @@ now we have new project folder
 once we are inside out project folder we can start Git by `git` `init`
 
 ```bash
-~ /desktop/project_01 > git init
+$ /desktop/project_01 > git init
 ```
 
 from now on Git will track all changes inside our project folder
@@ -32,14 +31,14 @@ from now on Git will track all changes inside our project folder
 - Using only `git init` `project_name`
 
 ```bash
-~ /desktop > git init project_01
-~ /desktop > cd project_01
+$ /desktop > git init project_01
+$ /desktop > cd project_01
 ```
 
 or
 
 ```bash
-~ git init desktop/project_01
+$ git init desktop/project_01
 ```
 
 ---
@@ -51,7 +50,7 @@ we can rename our project
 **`mv`** `old name` `new name`
 
 ```bash
-~ /desktop > mv project_01 newSite
+$ /desktop > mv project_01 newSite
 ```
 
 ---
@@ -65,7 +64,7 @@ by deleting `.git` folder from our project we will loose ALL uncommitted and/or 
 **`rf`** `-rf` `file_name`
 
 ```bash
-~ /desktop/newSite > rm -rf .git
+$ /desktop/newSite > rm -rf .git
 ```
 
 ### Delete project
@@ -73,7 +72,7 @@ by deleting `.git` folder from our project we will loose ALL uncommitted and/or 
 **`rf`** `-rf` `file_name`
 
 ```bash
-~ /desktop > rm -rf project_01
+$ /desktop > rm -rf newSite
 ```
 
 ---
