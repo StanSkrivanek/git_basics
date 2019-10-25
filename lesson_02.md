@@ -6,6 +6,8 @@
 
 ![Git local](https://www.dropbox.com/s/plw0to1y4solyq4/git_local_principle.png?raw=1)
 
+[Git local (video)](https://www.dropbox.com/s/reb43ilf93gmpkz/git-local-principle.m4v?raw=1)
+
 ### - create project
 
 - create project folder on desktop `mkdir`
