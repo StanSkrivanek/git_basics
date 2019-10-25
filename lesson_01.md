@@ -111,9 +111,9 @@ We can check changes with `git status`
 
 All our commits are stored in **`.git`** folder
 
-![You will find Git principle video in class folder](https://www.dropbox.com/s/ars5fp4acwazrky/git_local_basics.png?raw=1)
+![image](https://www.dropbox.com/s/ars5fp4acwazrky/git_local_basics.png?raw=1)
 
-[Git basic principle (video)](https://www.dropbox.com/s/juv012b573xqoc1/git_local_basics.m4v?raw=1)
+[Git basics (video)](https://www.dropbox.com/s/juv012b573xqoc1/git_local_basics.m4v?raw=1)
 
 ---
 
