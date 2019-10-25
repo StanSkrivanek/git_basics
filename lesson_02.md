@@ -4,8 +4,7 @@
 
 ## Write - Stage - Commit
 
-![Git local](https://www.dropbox.com/s/icx5o2nt9tiv6dh/git_local_principle.png?raw=1)
-[Git local (video)](https://www.dropbox.com/s/lehg80izypvr8z2/git_local_principle.m4v?raw=1)
+![Git local](https://www.dropbox.com/s/plw0to1y4solyq4/git_local_principle.png?raw=1)
 
 ### - create project
 
