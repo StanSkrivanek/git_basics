@@ -142,8 +142,9 @@ ref: refs/head/master
     └── tags
 ```
 
-In [video](https://www.dropbox.com/s/reb43ilf93gmpkz/git-local-principle.m4v?raw=1) from last lesson we saw than HEAD pointer is always assigned to last commit. Git use HEAD to point to a latest state of progress (tip) in branches.
+In [git principle video](https://www.dropbox.com/s/reb43ilf93gmpkz/git-local-principle.m4v?raw=1) from last lesson we saw than HEAD pointer is always assigned to last commit. Git use HEAD to point to a latest state of progress (tip) in branches.
 
 We are still working only in MASTER branch of our project repository, but way how Git use HEAD is identical in each branch.
 
 When we create and check into a new branch, Git will assign HEAD to commits on this branch. With progress head will be always assigned to latest commit in this branch. When we then switch back to MASTER branch, HEAD will be pointing to our last commit in MASTER branch.
+[HEAD video](https://www.dropbox.com/s/y6wdyxks1xxnch3/git-HEAD.m4v?raw=1)
