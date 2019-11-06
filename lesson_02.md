@@ -1,7 +1,5 @@
 # 02 | Write - Stage - Commit
 
----
-
 This lesson is only practice how to work with most common Git commands
 
 ---
