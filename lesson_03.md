@@ -1,14 +1,12 @@
-# 03 | Data accessibility
-
----
-
-## Data accessibility from bottom up
+# 03 | Git underhood
 
 In this lesson we will learn basics how and where Git store data, how create referrals to them to access these and why is so fast. To understand we need know what is **blob**, **commit**, **tree**, **SHA - 1** and **HEAD** and their purpose.
 
 ---
 
-One of the reasons why Git is amazingly fast is use of referrals to snapshots (set of changes between commits). All these snapshots and referrals Git store in `.git` folder that is created inside of our project folder when we initiate Git `git init`
+## Data accessibility
+
+One of the reasons why Git is amazingly fast is use of referrals to snapshots (set of changes between commits). All these snapshots and referrals are stored by Git in `.git` folder that is created inside of our project folder when we initiate Git `git init`
 
 When we staging and then committing snapshots from Staging area to Repository, Git runs a few actions to save referrals (pointers) to snapshots.
 
@@ -60,29 +58,104 @@ If you will change only one letter e.g. [a for A] in word `all` generated hash w
 
 Git works with four different types of objects : a **blob**, a **tree**, a **commit**, and **tag**. Every Git object type consists of two things: _content_ and _size_. The size is simply the size of the content and the content depend on what type of object it is.
 
-### Where Git store objects
+### Where Git store these objects
 
-Objects are stored in `.git/object` folder. Git take **first two** digits of hash as prefix and assign this prefix as sub-folder name. Because hash is hexadecimal number we can have max 256 sub-folders. Each hash that start with identical prefix will be stored in this directory. This system save lots of search time on large projects. I know that is a bit confusing at this moment but it will all make sense later.
-
-> **SHA** for **blob** and **tree** should be **identical** for every user, **SHA** for **commit** will be **different**.
-
-Why? Don't forget that SHA-1 generate number that is directly related to content of data, therefore tree will have identical hash. But commit hash will be different for each user even if content () will be identical because There will be different metadata - _different user, different day/time_.
-
-#### Demonstration where SHA-1 is stored
-
-**`-w`** - write
+Before we will look on Git objects we should know where Git store all objects. When we open git hidden folder with "tree" plugin
 
 ```bash
-$ echo 'Hi all!' | git hash-object -w --stdin
+~/desktop/myProject > git init
+~/desktop/myProject > tree .git
+```
+
+as result we will get tree view of `.git` folder similar to this
+
+```bash
+.git
+├── COMMIT_EDITMSG
+├── HEAD
+├── config
+├── description
+├── hooks
+├── index
+├── info
+│   └── exclude
+├── logs
+│   ├── HEAD
+│   └── refs
+│       └── heads
+│           └── master
+├── objects
+│   ├── info
+│   └── pack
+└── refs
+    ├── heads
+    │   └── master
+    └── tags
+
+```
+
+When we take a closer look on this tree we see that there is folder _objects_
+
+### Git objects folders structure
+
+WE already know that Git runs SHA-1 encryption function on file snapshot to create unique _hash_. Hre is comming explanation why is blazing fast.
+When _hash_ is created Git will take **first two** digits of that _hash_ as prefix and assign this prefix as sub-folder name and place rest of _hash_ number inside this folder.
+
+Each _hash_ that start with identical prefix will be stored in the same directory. This system save lots of search time on large projects. I know that is a bit confusing at this moment but it will all make sense later.
+
+Because _hash_ is hexadecimal number we can have max 256 sub-folders.
+
+---
+
+### Why will commit have always different hash
+
+There is one thing we should remember before we will talk about each object in detail:
+
+> **SHA** for **blob** and **tree** should be **identical** for every user if data are identical, but **SHA** for **commit** will be for each user **different**.
+
+We know that SHA-1 generate hash number that is directly related to content of data, therefore blob and tree can have an identical hash.
+
+But commit hash will be **always** different for each user even if content of commit will be identical because commit contain extra information (metadata) as name of commiter and date and time of commit.
+
+> _different user_ and/or _different day/time_ **=** _different SHA-1 hash_
+
+#### What does it mean
+
+##### Time
+
+Image that you are only user creating commits, so each commit hash will be different because will be created at different time (hr-min-sec)
+
+##### Name of Commiter
+
+We didn't talk about team work yet but imagine for a moment than you work in a team on one project. Now, even if each team member will create commit with identical content at the same time (that's very unlikely), there is another factor for creating unique hash and that is commiter's name.
+
+---
+
+#### Demonstration where objects are stored
+
+To store git objects we need to create a project and initiate git
+
+```bash
+~ cd desktop
+~/desktop > mkdir gtest
+~/desktop > cd gtest
+~/desktop/gtest > git init
+```
+
+To store git object we will use **`-w`** bash flag **write**
+
+```bash
+~/desktop/gtest > master > echo 'Hi all!' | git hash-object -w --stdin
 c2fea86a95fc1286b5c806ca3a7ffa4fc970ca9c
-$ tree .git
 ```
 
-Show only `objects` tree
+Show only `objects` folder in project tree
 
 ```bash
-$ tree .git/objects
+~/desktop/gtest > master > tree .git/objects
 ```
+
+We see SHA of our stashed file
 
 ```bash
 .git/objects
@@ -91,56 +164,3 @@ $ tree .git/objects
 ├── info
 └── pack
 ```
-
-#### Git objects details
-
-To get information about git object type and its content we can use command `git cat-file` followed by flag and hash number
-
-- show **type** of git object
-  `git cat-file` **`-t`** `SHA hash`
-
-```bash
-~/desktop/project_01 > git cat-file -t c2fea86a95fc1286b5c806ca3a7ffa4fc970ca9c
-
-> blob
-```
-
-- show **content** of git object
-  `git cat-file` **`-p`** `SHA hash`
-
-```bash
-~/desktop/project_01 > git cat-file -p c2fea86a95fc1286b5c806ca3a7ffa4fc970ca9c
-
-> Hi all!
-```
-
----
-
-### WTF is blob
-
-Previously I have mentioned word _**blob**_ very shortly. Now is time to take a closer look what **blob** is.
-
-A simply said a **blob** is used to store file data, and it is generally a file.
-
-A Git **blob** _(binary large object)_ is lowest level **object** type used **to store the contents** of each file snapshot **in a git repository**.
-
-> **NOTE:** Important to remember is that **Git generated hash is based on file content** and **_not on file it self_**. This mean that two files with identical content will produce only one **blob** even that they will have different name or path.
-
-In previous section we have learned basics about SHA-1 hash. Now, when SHA-1 hash for our staged snapshot is generated, Git will store it in a blob object together with other information about this snapshot.
-
-`git show` `SHA-1 hash number`
-[blob](http://shafiul.github.io/gitbook/1_the_git_object_model.html)
-
-### How blob is created
-
-We already know that **Staging** is term used for placing our changes into memory with use of `git add`
-When we decide to store our changes into Stashing Area (memory) Git will:
-
-1. make snapshot of current content state of file('s) (with our changes)
-2. run SHA-1 on data (content) to create unique hash
-3. create object type **blob** with its unique hash
-4. store required information in a **blob** object (SHA - 1 hash, data ...)
-5. create sub-folder in `.git/objects` based on first two letters of hash
-6. place encrypted blob (SHA-1 hash) into this sub-folder
-
-**NOTE:** Take this description as non-technical and **very** brief

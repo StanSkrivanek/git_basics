@@ -34,16 +34,12 @@ By placing changes into memory, Git will know what changes are going to be part 
 
 ### Repository
 
-Once Git have changes **staged** in memory we need to tell Git to store these changes into file on our computer by `git commit -m "descriptive message"` Git will store data and beside referral to commit will also create a **tree**. You can thing about a **tree** as referrals a _"crossroad"_. Again, we will talk about what tree is for a bit later.
-
-We can check changes with `git status`
-
-We can check changes with `git status`
-
-All our commits are stored in **`.git`** folder
-
-> Git will add reference to **one commit** and **one tree**
+Once Git have **staged** snapshot of changes in memory we need to tell Git to store these changes into file on our computer by `git commit -m "descriptive message"`.
 
 ![image](https://www.dropbox.com/s/ars5fp4acwazrky/git_local_basics.png?raw=1)
 
 [Git basics (video)](https://www.dropbox.com/s/juv012b573xqoc1/git_local_basics.m4v?raw=1)
+
+When we execute commit command `git commit -m "message"` Git will store data, create referral to commit and also will create a **tree**. You can thing about a **tree** as a _"crossroad"_ to other objects. Again, we will talk about what tree is and what is its function in upcoming lessons.
+
+<!-- > Git will add reference to **one commit** and **one tree** -->

@@ -4,19 +4,7 @@
 
 This lesson is only practice how to work with most common Git commands
 
-## Git commands we will use often
-
-- `git` `init` - Git initialization
-- `git` `status` - Git status (staging/commit)
-- `git` `diff` - Show difference (used in working area)
-- `git` `add` `file name` / `.` - adding to staging area (memory)
-- `git` `rm` `--cached` `file name` - removing from staging area (memory)
-- `git` `commit` `-m` `"message"` - adding changes to file on computer
-- `git` `log` `--oneline` - show all commits (one line overview)
-
 ---
-
-<!-- MOVE PRACTICE AREA TO LESSON 2 -->
 
 ## Practice Area
 
@@ -210,3 +198,15 @@ We can open our project in VSCode using command `code .`
 ```bash
 ~/desktop/project_01 > code .
 ```
+
+---
+
+### Often used Git commands so far
+
+- `git` `init` - Git initialization
+- `git` `status` - Git status (staging/commit)
+- `git` `diff` - Show difference (used in working area)
+- `git` `add` `file name` / `.` - adding to staging area (memory)
+- `git` `rm` `--cached` `file name` - removing from staging area (memory)
+- `git` `commit` `-m` `"message"` - adding changes to file on computer
+- `git` `log` `--oneline` - show all commits (one line overview)
