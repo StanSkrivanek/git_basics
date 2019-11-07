@@ -12,10 +12,39 @@ A Git **blob** _(binary large object)_ is lowest level **object** type used **to
 
 > **NOTE:** Important to remember is that **Git generated hash is based on file content** and **_not on file it self_**. This mean that two files with identical content will produce only one **blob** even that they will have different name or path.
 
-In previous section we have learned basics about SHA-1 hash. Now, when SHA-1 hash for our staged snapshot is generated, Git will store it in a blob object together with other information about this snapshot.
+### demonstration
+
+```bash
+~ cd desktop
+~ desktop > mkdir twofiles
+~ cd twofiles
+~ desktop/twofiles > git init
+~ desktop/twofiles > master > echo "hello" > first.txt
+~ desktop/twofiles > master > ls
+~ desktop/twofiles > master > tree .git/objects
+~ desktop/twofiles > master > git add first.txt
+~ desktop/twofiles > master > tree .git/objects
+~ desktop/twofiles > master > echo "hello" > second.txt
+~ desktop/twofiles > master > ls
+~ desktop/twofiles > master > git add second.txt
+~ desktop/twofiles > master > tree .git/objects
+```
+
+If you have followed these commands, result should be **only one blob**
+
+```bash
+.git/objects
+├── ce
+│   └── 013625030ba8dba906f756967f9e9ca394464a
+├── info
+└── pack
+```
+
+In previous section we have learned basics about SHA-1 hash. Now, when SHA-1 hash for our staged file snapshot is generated, Git will store it in a blob object .
 
 `git show` `SHA-1 hash number`
-[blob](http://shafiul.github.io/gitbook/1_the_git_object_model.html)
+
+<!-- [blob](http://shafiul.github.io/gitbook/1_the_git_object_model.html) -->
 
 ### How blob is created
 
@@ -65,6 +94,7 @@ Check git objects folder
 
 ```bash
 ~ tree .git/objects
+
 > .git/objects
   ├── 30
   │   └── 3ff981c488b812b6215f7db7920dedb3b59d9a
