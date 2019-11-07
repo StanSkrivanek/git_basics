@@ -72,7 +72,7 @@ Check git objects folder
   └── pack
 ```
 
-We can see that our Stashed file was stored in `git/object` folder. Git runned SHA-1 on file snapshot, used hash's first two digits as sub-folder name and stored hash inside.
+We can see than our Stashed file was stored in `git/object` folder. Git run SHA-1 on file snapshot, used hash's first two digits as sub-folder name and stored hash inside.
 
 #### Git objects details
 

@@ -1,4 +1,4 @@
-# 03 | Git underhood
+# 03 | Git under-hood
 
 In this lesson we will learn basics how and where Git store data, how create referrals to them to access these and why is so fast. To understand we need know what is **blob**, **commit**, **tree**, **SHA - 1** and **HEAD** and their purpose.
 
@@ -98,7 +98,7 @@ When we take a closer look on this tree we see that there is folder _objects_
 
 ### Git objects folders structure
 
-WE already know that Git runs SHA-1 encryption function on file snapshot to create unique _hash_. Hre is comming explanation why is blazing fast.
+WE already know that Git runs SHA-1 encryption function on file snapshot to create unique _hash_. Here is coming explanation why is blazing fast.
 When _hash_ is created Git will take **first two** digits of that _hash_ as prefix and assign this prefix as sub-folder name and place rest of _hash_ number inside this folder.
 
 Each _hash_ that start with identical prefix will be stored in the same directory. This system save lots of search time on large projects. I know that is a bit confusing at this moment but it will all make sense later.
@@ -115,7 +115,7 @@ There is one thing we should remember before we will talk about each object in d
 
 We know that SHA-1 generate hash number that is directly related to content of data, therefore blob and tree can have an identical hash.
 
-But commit hash will be **always** different for each user even if content of commit will be identical because commit contain extra information (metadata) as name of commiter and date and time of commit.
+But commit hash will be **always** different for each user even if content of commit will be identical because commit contain extra information (metadata) as name of committer and date and time of commit.
 
 > _different user_ and/or _different day/time_ **=** _different SHA-1 hash_
 
@@ -125,9 +125,9 @@ But commit hash will be **always** different for each user even if content of co
 
 Image that you are only user creating commits, so each commit hash will be different because will be created at different time (hr-min-sec)
 
-##### Name of Commiter
+##### Name of committer
 
-We didn't talk about team work yet but imagine for a moment than you work in a team on one project. Now, even if each team member will create commit with identical content at the same time (that's very unlikely), there is another factor for creating unique hash and that is commiter's name.
+We didn't talk about team work yet but imagine for a moment than you work in a team on one project. Now, even if each team member will create commit with identical content at the same time (that's very unlikely), there is another factor for creating unique hash and that is committers name.
 
 ---
 
