@@ -12,9 +12,8 @@ This lesson is only practice how to work with most common Git commands
 - Using `mkdir`
 
 ```bash
-~ > cd desktop
-~ > desktop > mkdir project_01
-~ > desktop > cd project_01
+~/ cd desktop
+~/desktop > mkdir project_01
 ```
 
 now we have a new project folder
