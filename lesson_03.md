@@ -58,6 +58,13 @@ If you will change only one letter e.g. [a for A] in word `all` generated hash w
 
 Git works with four different types of objects : a **blob**, a **tree**, a **commit**, and **tag**. Every Git object type consists of two things: _content_ and _size_. The size is simply the size of the content and the content depend on what type of object it is.
 
+- A **blob** is used to store file data - it is generally a file.
+- A **tree** is basically like a crossroad - it references to other trees and/or blobs
+- A **commit** points to a single tree, marking it as what the project looked like at a certain point in time. It contains meta-information about that point in time, such as a timestamp, the author of the changes since the last commit, a pointer to the previous commit, etc.
+- A **tag** is a way to mark a specific commit as special in some way. It is normally used to tag certain commits as specific releases or something along those lines.
+
+Almost all of Git is built around manipulating this simple structure of four different object types. It is sort of its own little filesystem that sits on top of your machine's filesystem.
+
 ### Where Git store these objects
 
 Before we will look on Git objects we should know where Git store all objects. When we open git hidden folder with "tree" plugin
@@ -98,38 +105,12 @@ When we take a closer look on this tree we see that there is folder _objects_
 
 ### Git objects folders structure
 
-WE already know that Git runs SHA-1 encryption function on file snapshot to create unique _hash_. Here is coming explanation why is blazing fast.
+We already know that Git runs SHA-1 encryption function on file snapshot to create unique _hash_. Here is coming explanation why is blazing fast.
 When _hash_ is created Git will take **first two** digits of that _hash_ as prefix and assign this prefix as sub-folder name and place rest of _hash_ number inside this folder.
 
 Each _hash_ that start with identical prefix will be stored in the same directory. This system save lots of search time on large projects. I know that is a bit confusing at this moment but it will all make sense later.
 
 Because _hash_ is hexadecimal number we can have max 256 sub-folders.
-
----
-
-### Why will commit have always different hash
-
-There is one thing we should remember before we will talk about each object in detail:
-
-> **SHA** for **blob** and **tree** should be **identical** for every user if data are identical, but **SHA** for **commit** will be for each user **different**.
-
-We know that SHA-1 generate hash number that is directly related to content of data, therefore blob and tree can have an identical hash.
-
-But commit hash will be **always** different for each user even if content of commit will be identical because commit contain extra information (metadata) as name of committer and date and time of commit.
-
-> _different user_ and/or _different day/time_ **=** _different SHA-1 hash_
-
-#### What does it mean
-
-##### Time
-
-Image that you are only user creating commits, so each commit hash will be different because will be created at different time (hr-min-sec)
-
-##### Name of committer
-
-We didn't talk about team work yet but imagine for a moment than you work in a team on one project. Now, even if each team member will create commit with identical content at the same time (that's very unlikely), there is another factor for creating unique hash and that is committers name.
-
----
 
 #### Demonstration where objects are stored
 
@@ -155,7 +136,7 @@ Show only `objects` folder in project tree
 ~/desktop/gtest > master > tree .git/objects
 ```
 
-We see SHA of our stashed file
+We see SHA of our staged file
 
 ```bash
 .git/objects
@@ -164,3 +145,62 @@ We see SHA of our stashed file
 ├── info
 └── pack
 ```
+
+---
+
+### More objects with identical first two chars
+
+When _hash_ is generated there is high probability that first two digits will be identical for any git object type _(blob,tree,commit, tag)_. In this situation Git will place these objects with identical prefix into same folder.
+
+```bash
+.git/objects
+├── 0a
+│   └── 5568b3eb72786b7d025f317905c26d9b2a59ce
+├── e6
+│   ├── 2e4bb717fa49c033a100ace386719545bf40b8
+│   └── 9de29bb2d1d6434b8b29ae775ad8c2e48c5391
+├── info
+└── pack
+```
+
+---
+
+## Git objects details
+
+To get information about git object type and its content we can use command `git cat-file` followed by flag and hash number
+
+use `cat-file` command with flag **`-t`** followed by hash to show **type** of file
+
+- `git cat-file` **`-t`** `SHA hash`
+
+```bash
+~/desktop/blobs > git cat-file -t 303ff981c488b812b6215f7db7920dedb3b59d9a
+
+> blob
+```
+
+We can use `cat-file` command with flag **`-p`** followed by hash to show file **content**
+
+- `git cat-file` **`-p`** `SHA hash`
+
+```bash
+~/desktop/blobs > git cat-file -p 303ff981c488b812b6215f7db7920dedb3b59d9a
+
+> File One
+```
+
+Just to see that these objects are in staging area we can check git status
+
+```bash
+~ git status
+
+> On branch master
+
+  No commits yet
+
+  Changes to be committed:
+    (use "git rm --cached <file>..." to unstage)
+          new file:   first.txt"
+```
+
+We can see that we are on **_master_** branch,there is no **_commit_** and our cached file is **_first.txt_**

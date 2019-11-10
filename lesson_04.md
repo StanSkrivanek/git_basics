@@ -12,7 +12,7 @@ A Git **blob** _(binary large object)_ is lowest level **object** type used **to
 
 ---
 
-### How blob is created
+## How blob is created
 
 We already know that **Staging** is term used for placing our changes into memory with use of `git add`
 When we decide to store our changes into Stashing Area (memory) Git will:
@@ -104,49 +104,7 @@ In previous section we have learned basics about SHA-1 hash. Now, when SHA-1 has
 
 `git show` `SHA-1 hash number`
 
-<!-- [blob](http://shafiul.github.io/gitbook/1_the_git_object_model.html) -->
-
----
-
-### Git objects details
-
-To get information about git object type and its content we can use command `git cat-file` followed by flag and hash number
-
-use `cat-file` command with flag **`-t`** followed by hash to show **type** of file
-
-- `git cat-file` **`-t`** `SHA hash`
-
-```bash
-~/desktop/blobs > git cat-file -t 303ff981c488b812b6215f7db7920dedb3b59d9a
-
-> blob
-```
-
-We can use `cat-file` command with flag **`-p`** followed by hash to show file **content**
-
-- `git cat-file` **`-p`** `SHA hash`
-
-```bash
-~/desktop/blobs > git cat-file -p 303ff981c488b812b6215f7db7920dedb3b59d9a
-
-> File One
-```
-
-Check git status
-
-```bash
-~ git status
-
-> On branch master
-
-  No commits yet
-
-  Changes to be committed:
-    (use "git rm --cached <file>..." to unstage)
-          new file:   first.txt"
-```
-
-Thats all we need to know about **blob**
+[blob](http://shafiul.github.io/gitbook/1_the_git_object_model.html)
 
 ---
 

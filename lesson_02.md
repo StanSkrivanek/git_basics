@@ -1,6 +1,7 @@
 # 02 | Write - Stage - Commit
 
 This lesson is only practice how to work with most common Git commands
+[Basic Git principle - local (video)](https://www.dropbox.com/s/qi6q35zq5l9oqdv/git_local_principle.m4v?raw=1)
 
 ---
 
@@ -50,10 +51,6 @@ or
 ```bash
 ~ git init desktop > project_01
 ```
-
-<!-- ![Git local](https://www.dropbox.com/s/plw0to1y4solyq4/git_local_principle.png?raw=1) -->
-
-<!-- [Git local (video)](https://www.dropbox.com/s/reb43ilf93gmpkz/git-local-principle.m4v?raw=1) -->
 
 ---
 
