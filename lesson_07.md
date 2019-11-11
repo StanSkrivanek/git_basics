@@ -71,7 +71,7 @@ With progress head will be always assigned to latest commit in this branch. When
 
 ## Merge
 
-Once we are done with new version of our project and everything works as we expected we can bring our features into any existing branch that in 90% cases is MASTER branch (MAIN PROJECT). We can merge one version (branch) with any other branch in our project.
+Once we are done with new version of our project and everything works as we expected we can bring ( _merge_ ) our features into any existing branch in our project, but in 90% of cases we will merge into our **master** branch ( _main developing line_ ).
 
 ### Merge into branch
 
