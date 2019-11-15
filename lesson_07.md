@@ -63,9 +63,11 @@ This code mean: Hey Git, go to branch **`checkout`**, but before you do that you
 
 When we create and check into a new branch, Git will assign HEAD on this branch and contain pointer to last commit from `master` branch. Because commits hold pointers to its parent commit a new branch will have access to all commits from `master` branch.
 
-[branch-HEAD video](https://www.dropbox.com/s/dhc6vo2wmyaku2p/branch-HEAD.m4v?raw=1)
+<!-- [branch-HEAD principle (video)](https://www.dropbox.com/s/dhc6vo2wmyaku2p/branch-HEAD.m4v?raw=1) -->
 
-With progress head will be always assigned to latest commit in this branch. When we then switch back to MASTER branch, HEAD will be pointing to our last commit in MASTER branch.
+[branch create (video)](https://www.dropbox.com/s/5jwt44zxj01cgm7/branch_create.m4v?raw=1)
+
+With progress head will be always assigned to latest commit in this branch. When we switch back to MASTER branch, HEAD will be pointing to our last commit in MASTER branch.
 
 ---
 
@@ -75,7 +77,8 @@ Once we are done with new version of our project and everything works as we expe
 
 ### Merge into branch
 
-Applying
+Applying new ideas/features into main developing line (master)
+[branch merge (video)](https://www.dropbox.com/s/vyzo6gtwv8jdy91/branch_merge.m4v?raw=1)
 
 `git` `merge` `branch_name` - merge branch
 
@@ -86,6 +89,9 @@ Applying
 ---
 
 ## Delete branch
+
+Deleting branch we don't need
+[branch delete (video)](https://www.dropbox.com/s/0dwa6cze80c0a5v/branch_delete.m4v?raw=1)
 
 `-d` - give a warning if branch is not already merged in
 `-D` - force deletion
