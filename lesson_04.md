@@ -68,7 +68,7 @@ Check git objects folder
   └── pack
 ```
 
-We can see than our Stashed file was stored in `git/object` folder. Git run SHA-1 on file snapshot, used hash's first two digits as sub-folder name and stored hash inside.
+We can see than our _staged_ file was stored in `git/object` folder. Git run SHA-1 on file snapshot, used hash's first two digits as sub-folder name and stored hash inside.
 
 > **NOTE:** Important to remember is that **Git generated hash is based on file content** and **_not on file it self_**. This mean that two files with identical content will produce only one **blob** even that they will have different name or path.
 

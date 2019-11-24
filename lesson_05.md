@@ -1,6 +1,6 @@
 # 05 | Commit & Tree
 
-When we make a commit of snapshots from staging area, Git will create a two new object types **commit** and **tree**.
+When we make a commit of snapshots from staging area, Git will create a two new object types **tree** and **commit**.
 
 ---
 
@@ -73,7 +73,12 @@ Another common rule we should follow is writing your commit messages short and d
 ### Shortcut - add & commit
 
 There is a shortcut do `add` and `commit` changes on **current** branch at once with command:
-`git commit -a -m “descriptive message of changes”`.
+
+```bash
+git commit -am “descriptive message”
+```
+
 **`-a`** = **`add`**
+**`-m`** = **`message`**
 
 This mean `add` and `commit` will be made into branch you are currently in.

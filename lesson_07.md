@@ -33,7 +33,7 @@ To create a new branch we use command `branch` followed by our branch name. If w
 `git` `branch` `branch_name` - create a new branch
 
 ```bash
-~ git branch main_menu
+~ git branch web_menu
 ```
 
 At this stage a new branch is only created. To be able start to work in this _a new developing line_ we have to make this _branch_ active by switch into it.
@@ -63,22 +63,19 @@ This code mean: Hey Git, go to branch **`checkout`**, but before you do that you
 
 When we create and check into a new branch, Git will assign HEAD on this branch and contain pointer to last commit from `master` branch. Because commits hold pointers to its parent commit a new branch will have access to all commits from `master` branch.
 
-<!-- [branch-HEAD principle (video)](https://www.dropbox.com/s/dhc6vo2wmyaku2p/branch-HEAD.m4v?raw=1) -->
-
 [branch create (video)](https://www.dropbox.com/s/5jwt44zxj01cgm7/branch_create.m4v?raw=1)
 
 With progress head will be always assigned to latest commit in this branch. When we switch back to MASTER branch, HEAD will be pointing to our last commit in MASTER branch.
 
 ---
 
-## Merge
+## Merge into branch
+
+Applying new ideas/features into main developing line (master)
 
 Once we are done with new version of our project and everything works as we expected we can bring ( _merge_ ) our features into any existing branch in our project, but in 90% of cases we will merge into our **master** branch ( _main developing line_ ).
 
-### Merge into branch
-
-Applying new ideas/features into main developing line (master)
-[branch merge (video)](https://www.dropbox.com/s/vyzo6gtwv8jdy91/branch_merge.m4v?raw=1)
+[branch merge (video)](https://www.dropbox.com/s/vlzx22zqv2tllku/branch_merge.m4v?raw=1)
 
 `git` `merge` `branch_name` - merge branch
 
@@ -93,8 +90,8 @@ Applying new ideas/features into main developing line (master)
 Deleting branch we don't need
 [branch delete (video)](https://www.dropbox.com/s/0dwa6cze80c0a5v/branch_delete.m4v?raw=1)
 
-`-d` - give a warning if branch is not already merged in
-`-D` - force deletion
+`-d` - give a warning if branch is not already merged in (mostly use this)
+`-D` - force deletion - thing twice before using `-D` (used in certain situations)
 
 ```bash
 ~ git branch -d branch_name
