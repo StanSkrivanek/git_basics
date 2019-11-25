@@ -81,6 +81,8 @@ If we want to stash all snapshots we don't need to type default command `save`, 
 git stash
 ```
 
+---
+
 #### `stash -u` Stash all tracked & untracked files (Working area)
 
 Let's imagine when our project manager is coming we have beside changes in Staging area also some changes in Working area. As we already know git will recognize these as **untracked** files.
@@ -93,18 +95,18 @@ git stash -u
 
 After command with `-u` flag are stashed files from both (working and staging) areas
 
-```bash
-git stash save -u "message"
-```
-
 When we run command `git status` we will have clean working area (directory). Nothing will be in Staging Area.
 
 #### Stash with message
 
-Is always better to add descriptive message to stashed snapshot(s)
+Is always better to add descriptive message to stashed and /or untracked snapshot(s)
 
 ```bash
 git stash save "descriptive message"
+```
+
+```bash
+git stash save -u "descriptive message"
 ```
 
 ---
