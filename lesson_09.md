@@ -135,7 +135,7 @@ kompare emerge vimdiff
 
 ### Set `vimdiff` as main `difftool`
 
-There are some tools to show differences in more human friendly form. In our case we will use `vimdiff` that will show differences next to each other. But firs let set this tool as default diff tool
+There are some tools to show differences in more human friendly form. In our case we will use `vimdiff` that will show differences next to each other. But first let set this tool as default diff tool.
 
 To set `vimdiff` globally use followed command in terminal. This command will add code into `.gitconfig` file
 
@@ -166,17 +166,15 @@ vim ~/.gitconfig
 
 We can customize Vim to our needs but this is not part of this course. We will only focus how to change Vim color theme.
 
-1. because we have just install Vim, first we need to do is to create `.vimrc` file in our home directory
-
-```bash
-~ touch .vimrc
-```
+1. because we have just install Vim, first we need to do is to create `.vimrc` file in our home directory.
 
 2. once `.vimrc` file is created we can open it in our favorite text editor. here we use Vim
 
 ```bash
 ~ vim ~/.vimrc
 ```
+
+NOTE `:wqa`
 
 3. Once `.vimrc` is open we will type
 
@@ -236,9 +234,9 @@ To get diff result we have to use flag `--cached`
 git difftool --cached
 ```
 
-### Compare changes in INDEX (stashed)
+### Compare changes in INDEX (staged)
 
-Let say that we have stashed file but before commit we will edit this file.
+Let say that we have staged file but before commit we will edit this file.
 The result of `git status` can be a bit confusing.
 
 we have our `second.txt` in INDEX and we will make some changes to this staged file.
