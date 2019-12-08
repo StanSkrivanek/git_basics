@@ -81,8 +81,6 @@ If we want to stash all snapshots we don't need to type default command `save`, 
 git stash
 ```
 
----
-
 #### `stash -u` Stash all tracked & untracked files (Working area)
 
 Let's imagine when our project manager is coming we have beside changes in Staging area also some changes in Working area. As we already know git will recognize these as **untracked** files.
@@ -97,9 +95,11 @@ After command with `-u` flag are stashed files from both (working and staging) a
 
 When we run command `git status` we will have clean working area (directory). Nothing will be in Staging Area.
 
-#### Stash with message
+---
 
-Is always better to add descriptive message to stashed and /or untracked snapshot(s)
+### Give Stash message for easy reference
+
+When we use standard command `git stash` git give us only SHA-1 pointer as description, that is not very useful when we come to stashed snapshots a few days or weeks later. We can assign to stash useful message to remember what changes we have worked on.
 
 ```bash
 git stash save "descriptive message"
@@ -157,21 +157,19 @@ git stash apply stash@{n}
 
 ---
 
-### Give Stash message for easy reference
-
-When we use standard command `git stash` git give us only SHA-1 pointer as description, that is not very useful when we come to stashed snapshots a few days or weeks later. We can assign to stash useful message to remember what changes we have worked on.
-
-```bash
-git stash save "descriptive message"
-```
-
-#### Call back & Delete from Stash
+### Call back & Delete from Stash
 
 If we want to call out all stashed snapshots and delete them at once we will use command `pop`
 The `pop` command will call out last stashed snapshot and delete it from Stashing area
 
 ```bash
 git stash pop
+```
+
+we can also call out and delete specific stash using `stash@{n}`
+
+```bash
+git stash pop stash@{n}
 ```
 
 ---
