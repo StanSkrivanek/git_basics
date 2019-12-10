@@ -115,7 +115,7 @@ IMPORTANT: **commit our changes**
 ### diff of two commits
 
 As we saw `git diff` output doesn't say much about changes. To see comprehensive human readable comparison of two files we can use Git `difftool`
-[Git diftool](https://git-scm.com/docs/git-difftool)
+[Git difftool](https://git-scm.com/docs/git-difftool)
 
 ```bash
 git difftool <sha1> <sha2> -- path/to/file
