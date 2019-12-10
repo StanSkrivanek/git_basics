@@ -168,13 +168,11 @@ We can customize Vim to our needs but this is not part of this course. We will o
 
 1. because we have just install Vim, first we need to do is to create `.vimrc` file in our home directory.
 
-2. once `.vimrc` file is created we can open it in our favorite text editor. here we use Vim
+2. once `.vimrc` file is created we can open it in our favorite text editor. We will use Vim
 
 ```bash
 ~ vim ~/.vimrc
 ```
-
-NOTE `:wqa`
 
 3. Once `.vimrc` is open we will type
 
@@ -208,7 +206,8 @@ git difftool HEAD HEAD^ -- <filename>
 `HEAD^` - nearest (first) parent of last commit
 `^` - caret
 
-We have two commits both for `first.txt` file we can show diff between them like this.
+If we have more files edited in commit, we can specify to see changes in specific file.
+In our case we have two commits, both only for `first.txt` file, we can show diff between these commits in this file like this.
 
 ```bash
 git difftool HEAD HEAD^ -- first.txt
