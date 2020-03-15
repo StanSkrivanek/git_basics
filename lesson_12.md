@@ -15,7 +15,7 @@ In short SSH (Secure Shell) use both `SYMMETRIC` and `ASYMMETRIC` encryption. In
 
 Encryption is the specific way how to hide data content durning communication between two computers. Usually is communication between `client` (your computer) and `Host` (server/other computer).
 
-Encryption is used to prevent access these data for unauthorized suspects durning communication. There many encryption algorithms `Symmetric`, `Asymmetric`, and `Hash`
+Encryption is used to prevent access these data for unauthorized suspects durning communication. In SSH are used tree basic encryption algorithms `Symmetric`, `Asymmetric`, and `Hash`
 
 ### Symmetric
 
@@ -32,11 +32,11 @@ When someone else see this data he would not understand these data because he do
 
 This is how SSH works (partially) in its core but this type of encrypted communication has on major security problem. **Anyone who has the key can decrypt the message**.
 
-Thats why we have to some way to hide this key that other entities (people) can find what key is used. This is done with **Key exchange algorithm**. What make this algorithm secure is that key is never transmitted between `client` and `host`, mean it's not part of transmitted data.
+Thats why we have to some way hide this key that other suspects (people) can't find what key is used. This is done with **Key exchange algorithm**. What make this algorithm secure is that key is never transmitted between `client` and `host`, mean it's not part of transmitted data.
 
 These computers share some public piece of data and then independently calculate this secret key. Even if someone else get these public data would not be able calculate key thanks to **Key exchange algorithm**
 
-Secret key is specific for each SSH session and is generated prior to something called **client authentication**. With use of **Symmetrical** encryption between `client` and `host` all communication will be encrypted and private. But we need use key exchange algorithm.
+Secret key is specific for each SSH session and is generated prior to something called **client authentication**. With use of **Symmetrical** encryption between `client` and `host` all communication will be encrypted and private. But we need use `key exchange algorithm`.
 
 [Symmetric - video](https://www.dropbox.com/s/v8oxrhzj0jveq6r/SymmetricEncryption.m4v?raw=1)
 
@@ -54,7 +54,7 @@ Data send from `client` are encrypted with **host** `public key`. These data are
 
 [DHEx explained - video](https://www.youtube.com/watch?v=NmM9HA2MQGI)
 
-But that's not all there may happen situation that some way will unauthorized entity ("man in middle") break this encrypted communication and pretend to be `HOST` and `CLIENT`. If this happened "man in middle" can read and modified data send over this "secure" communication pipe.
+But that's not all there may happen situation that some way will unauthorized entity ("man in middle") break this encrypted communication and pretend to be `HOST` and `CLIENT`. If this happened "man in middle" can read and/or modified these data and send them over this "secure" communication pipe.
 
 Don't worry there is a way how to make this possible vulnerability more secure by using Hash function.
 
@@ -62,7 +62,7 @@ Don't worry there is a way how to make this possible vulnerability more secure b
 
 ### Hash
 
-Hashing is another type of cryptography. Hash algorithm is different from both algorithms above as is used to ensure that the received message text is intact and unmodified.
+Hashing is another type of cryptography. Hash algorithm is different from both algorithms above as is used to ensure that the received message is **intact** and **unmodified**.
 
 We have come across Hash function in early lessons about Git when we create a hash with use of SHA-1. Do you remember? Just keep in mind that SHA-1 is not used in any secure communication nor in SSH.
 
@@ -70,7 +70,7 @@ In secure communication is Hash function used to generate 40 digits number that 
 
 #### How it works?
 
-Once secure communication pipe s established using `asymmetric` and `symmetric` keys, than data run thru Hash function before are transmitted.
+Once secure communication pipe is established using `asymmetric` and `symmetric` keys, than data run thru Hash function before are transmitted.
 
 As part of the symmetrical encryption negotiation outlined above, a message authentication code (MAC) algorithm is selected. The algorithm is chosen by working through the client's list of acceptable MAC choices. The first one out of this list that the server supports will be used.
 
@@ -92,9 +92,9 @@ Then Host will check is received Hash from client match Hash generated on its si
 
 ## Why SSH for Github
 
-Github give us two secure **encrypted** protocols **HTTPS** and **SSH** to communicate with their server. When we use HTTPS, it will **always** verify the server automatically using **Certificate Authorities**.
+Github give us two secure **encrypted** protocols **HTTPS** and **SSH** to communicate with their server. When we use HTTPS, the server will **always** verified by **Certificate Authorities**.
 
-Main disadvantage is that you always need to provide a password confirm who you are every time you connect to github. When you do daily many operations as pull requests, commits etc. Github will always ask for password and this became in no time a bit annoying.
+Main disadvantage is that you always need to provide a password confirm who you are every time you connect to github and try to do some actions as pull, push, merge etc. When you do daily many operations as pull requests, commits etc. Github will always ask for password and this became in no time a bit annoying.
 
 With **SSH** we use more secure communication than just passwords, we **use keys**.
 
